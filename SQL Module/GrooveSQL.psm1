@@ -5,7 +5,7 @@ function Invoke-StoredProcedure {
     .DESCRIPTION
         This function runs a Stored Procedure in SQL Server. It uses integrated security, so the user running the script should have access to the database.
     .PARAMETER Server
-        Hostname or IP of the SQL server
+        Hostname or IP of the SQL server followed by the instance '<server>\<instance>'
     .PARAMETER Database
         Name of the database
     .PARAMETER StoredProcedure
@@ -13,7 +13,7 @@ function Invoke-StoredProcedure {
     .PARAMETER SQLParameters
         A Hash Table with the name and value of the parameters that need to be passed to the Stored Procedure
     .EXAMPLE
-        Invoke-ETStoredProcedure -Server 'sql.groovesoundz.be' -Database 'AdventureWorks2017' -StoredProcedure 'GetUser' -SQLParameters @{Name="John"}
+        Invoke-ETStoredProcedure -Server 'sql.groovesoundz.be\SQLServer' -Database 'AdventureWorks2017' -StoredProcedure 'GetUser' -SQLParameters @{Name="John"}
     .NOTES
         Author:  Christof Van Geendertaelen
         Website: http://www.groovesoundz.be
